@@ -10,11 +10,10 @@ import { find } from "lodash";
 
 interface BodyProps {
     initialMessages: FullMessageType[],
-    
 }
 
 const Body = ({
-    initialMessages
+    initialMessages,
 } : BodyProps) => {
     const [messages, setMessages] = useState(initialMessages)
     const bottomRef = useRef<HTMLDivElement>(null)

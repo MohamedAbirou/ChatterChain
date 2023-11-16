@@ -9,6 +9,8 @@ import { HiChevronLeft, HiEllipsisHorizontal } from "react-icons/hi2";
 import ProfileDrawer from "./ProfileDrawer";
 import AvatarGroup from "@/app/components/AvatarGroup";
 import useActiveList from "@/app/hooks/useActiveList";
+import { ChatVideoButton } from "@/app/conversations/[conversationId]/components/chat-video-button";
+import { ChatAudioButton } from "./chat-audio-button";
 
 interface HeaderProps {
     conversation: Conversation & {
@@ -54,7 +56,11 @@ const Header = ({
                         </div>
                     </div>
                 </div>
-                <HiEllipsisHorizontal size={32} onClick={() => setDrawerOpen(true)} className="text-emerald-500 cursor-pointer hover:text-emerald-600 transition" />
+                <div className="flex">
+                    <ChatAudioButton />
+                    <ChatVideoButton />
+                    <HiEllipsisHorizontal size={32} onClick={() => setDrawerOpen(true)} className="text-emerald-500 cursor-pointer hover:text-emerald-600 transition" />
+                </div>
             </div>
         </>
     )

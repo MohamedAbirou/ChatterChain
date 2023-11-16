@@ -57,7 +57,7 @@ export async function POST (
                 users: true,
                 messages: {
                     include: {
-                        seen: true
+                        seen: true,
                     }
                 }
             }
