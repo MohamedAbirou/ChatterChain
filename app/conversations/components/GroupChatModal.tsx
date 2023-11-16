@@ -45,7 +45,7 @@ const GroupChatModal = ({
                 router.refresh()
                 onClose()
             })
-            .catch(() => toast.error('Something went wrong!'))
+            .catch(() => toast.error('3 members required to create a group chat!'))
             .finally(() => setIsLoading(false))
     }
 
