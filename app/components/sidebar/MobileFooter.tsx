@@ -7,6 +7,7 @@ import Avatar from "../Avatar"
 import { User } from "@prisma/client"
 import { useState } from "react"
 import SettingsModal from "./SettingsModal"
+import { usePathname } from "next/navigation"
 
 interface MobileFooterProps {
     currentUser: User
@@ -15,8 +16,17 @@ interface MobileFooterProps {
 const MobileFooter = ({
     currentUser
 } : MobileFooterProps) => {
+    const pathname = usePathname() || ""
     const routes = useRoutes()
     const [isOpen, setIsOpen] = useState(false)
+    const { conversationId } = useConversation()
+
+    const hideFooterRoutes = [`/conversations/${conversationId}`]
+    const showFooter = !hideFooterRoutes.includes(pathname)
+
+    if (!showFooter) {
+        return null
+    }
 
     return (
         <>
