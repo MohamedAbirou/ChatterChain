@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { LiveKitRoom, AudioConference } from "@livekit/components-react"
+import { LiveKitRoom, VideoConference } from "@livekit/components-react"
 import "@livekit/components-styles"
 import { Loader2 } from "lucide-react"
 import { useSession } from "next-auth/react"
@@ -46,8 +46,8 @@ export const MediaRoomAudio = ({
     }
 
     return (
-        <LiveKitRoom data-lk-theme="default" serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL} token={token} connect={true} video={video} audio={audio}>
-            <AudioConference />
+        <LiveKitRoom data-lk-theme="default" className="h-[93%] sm:h-full" serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL} token={token} connect={true} video={video} audio={audio}>
+            <VideoConference />
         </LiveKitRoom>
     )
 }
