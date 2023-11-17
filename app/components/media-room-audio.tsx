@@ -46,7 +46,7 @@ export const MediaRoomAudio = ({
     }
 
     return (
-        <div className="h-[90%]">
+        <div className="h-[87%]">
             <LiveKitRoom data-lk-theme="default" serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL} token={token} connect={true} video={video} audio={audio}>
                 <VideoConference />
             </LiveKitRoom>
